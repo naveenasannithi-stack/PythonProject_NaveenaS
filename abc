@@ -1,0 +1,19 @@
+import tkinter as tk
+
+# Create the main window
+window = tk.Tk()
+window.title("Button Example")
+window.geometry("250x150")
+
+# Define a function to run when button is clicked
+def on_click():
+    print("Button clicked!")
+
+# Create a button
+button = tk.Button(window, text="Click Me!", command=on_click)
+
+# Place the button in the window
+button.pack(pady=40)
+
+# Run the window loop
+window.mainloop()
