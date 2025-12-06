@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demand Prediction</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 480px;
+            margin: 60px auto;
+            background: #fff;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            animation: fadeIn 1s ease-in-out;
+        }
+        h2 {
+            text-align: center;
+            color: #444;
+            margin-bottom: 25px;
+            font-size: 26px;
+            letter-spacing: 1px;
+        }
+        label {
+            font-weight: 600;
+            font-size: 14px;
+            display: block;
+            margin-top: 12px;
+            color: #333;
+        }
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        input:focus {
+            border-color: #2196F3;
+            box-shadow: 0 0 6px rgba(33,150,243,0.4);
+            outline: none;
+        }
+        button {
+            margin-top: 25px;
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #2196F3, #0b7dda);
+            color: white;
+            border: none;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        button:hover {
+            transform: scale(1.03);
+        }
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(-20px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>Demand Prediction</h2>
+    <form action="/predict" method="POST">
+        <!-- Keep SAME ORDER EXACTLY -->
+        <label>Category:</label>
+        <input type="text" name="category" required>
+
+        <label>Region:</label>
+        <input type="text" name="region" required>
+
+        <label>Weather:</label>
+        <input type="text" name="weather" required>
+
+        <label>Seasonality:</label>
+        <input type="text" name="seasonality" required>
+
+        <label>Promotion:</label>
+        <input type="text" name="promotion" required>
+
+        <label>Competitor Price:</label>
+        <input type="number" step="0.01" name="competitor_price" required>
+
+        <label>Discount:</label>
+        <input type="number" step="0.01" name="discount" required>
+
+        <label>Inventory:</label>
+        <input type="number" name="inventory" required>
+
+        <label>Orders:</label>
+        <input type="number" name="orders" required>
+
+        <label>Price:</label>
+        <input type="number" step="0.01" name="price" required>
+
+        <button type="submit">Predict</button>
+    </form>
+</div>
+</body>
+</html>
